@@ -1,6 +1,6 @@
 //
 //  RestaurantDetailTextCell.swift
-//  Food Spottin
+//  Monchies
 //
 //  Created by Dion Pettaway on 12/5/19.
 //  Copyright © 2019 Dipet_Low. All rights reserved.

@@ -37,10 +37,11 @@
 		E2A4BE002398D30C00FC2790 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A4BDC8239856D600FC2790 /* Raleway-Thin.ttf */; };
 		E2A4BE012398D30C00FC2790 /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A4BDD5239856D800FC2790 /* Raleway-ThinItalic.ttf */; };
 		E2A4BE032398D3C400FC2790 /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE022398D3C400FC2790 /* RestaurantDetailTextCell.swift */; };
+		E2A4BE052399700C00FC2790 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4BE042399700C00FC2790 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E23D522023960806005F547C /* Food Spottin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Spottin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23D522023960806005F547C /* Monchies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monchies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23D522323960806005F547C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E23D522523960806005F547C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E23D522A23960806005F547C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		E2A4BDEC239868CF00FC2790 /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
 		E2A4BDEE2398CBA600FC2790 /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		E2A4BE022398D3C400FC2790 /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
+		E2A4BE042399700C00FC2790 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +90,8 @@
 		E23D521723960806005F547C = {
 			isa = PBXGroup;
 			children = (
-				E23D522223960806005F547C /* Food Spottin */,
+				E2A4BE042399700C00FC2790 /* Default-568h@2x.png */,
+				E23D522223960806005F547C /* Monchies */,
 				E23D522123960806005F547C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,12 +99,12 @@
 		E23D522123960806005F547C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E23D522023960806005F547C /* Food Spottin.app */,
+				E23D522023960806005F547C /* Monchies.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E23D522223960806005F547C /* Food Spottin */ = {
+		E23D522223960806005F547C /* Monchies */ = {
 			isa = PBXGroup;
 			children = (
 				E2A4BDC62398569200FC2790 /* Resources */,
@@ -113,7 +116,7 @@
 				E23D52312396080A005F547C /* Info.plist */,
 				E23D523C239612F6005F547C /* View */,
 			);
-			path = "Food Spottin";
+			path = Monchies;
 			sourceTree = "<group>";
 		};
 		E23D5239239609F2005F547C /* Controller */ = {
@@ -198,9 +201,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E23D521F23960806005F547C /* Food Spottin */ = {
+		E23D521F23960806005F547C /* Monchies */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E23D52342396080A005F547C /* Build configuration list for PBXNativeTarget "Food Spottin" */;
+			buildConfigurationList = E23D52342396080A005F547C /* Build configuration list for PBXNativeTarget "Monchies" */;
 			buildPhases = (
 				E23D521C23960806005F547C /* Sources */,
 				E23D521D23960806005F547C /* Frameworks */,
@@ -210,9 +213,9 @@
 			);
 			dependencies = (
 			);
-			name = "Food Spottin";
+			name = Monchies;
 			productName = "Food Spottin";
-			productReference = E23D522023960806005F547C /* Food Spottin.app */;
+			productReference = E23D522023960806005F547C /* Monchies.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +233,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E23D521B23960806005F547C /* Build configuration list for PBXProject "Food Spottin" */;
+			buildConfigurationList = E23D521B23960806005F547C /* Build configuration list for PBXProject "Monchies" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -243,7 +246,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E23D521F23960806005F547C /* Food Spottin */,
+				E23D521F23960806005F547C /* Monchies */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A4BDF42398D30C00FC2790 /* Raleway-ExtraBold.ttf in Resources */,
+				E2A4BE052399700C00FC2790 /* Default-568h@2x.png in Resources */,
 				E2A4BDFF2398D30C00FC2790 /* Raleway-SemiBoldItalic.ttf in Resources */,
 				E2A4BDF02398D30C00FC2790 /* Raleway-Black.ttf in Resources */,
 				E2A4BDFD2398D30C00FC2790 /* Raleway-Regular.ttf in Resources */,
@@ -438,14 +442,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K5QU5PJWNB;
-				INFOPLIST_FILE = "Food Spottin/Info.plist";
+				INFOPLIST_FILE = Monchies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.dipet.Food-Spottin";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = me.dipet.Monchies;
+				PRODUCT_NAME = Monchies;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -457,14 +461,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K5QU5PJWNB;
-				INFOPLIST_FILE = "Food Spottin/Info.plist";
+				INFOPLIST_FILE = Monchies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.dipet.Food-Spottin";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = me.dipet.Monchies;
+				PRODUCT_NAME = Monchies;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -473,7 +477,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E23D521B23960806005F547C /* Build configuration list for PBXProject "Food Spottin" */ = {
+		E23D521B23960806005F547C /* Build configuration list for PBXProject "Monchies" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E23D52322396080A005F547C /* Debug */,
@@ -482,7 +486,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E23D52342396080A005F547C /* Build configuration list for PBXNativeTarget "Food Spottin" */ = {
+		E23D52342396080A005F547C /* Build configuration list for PBXNativeTarget "Monchies" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E23D52352396080A005F547C /* Debug */,

@@ -1,6 +1,6 @@
 //
 //  RestaurantTableViewController.swift
-//  Food Spottin
+//  Monchies
 //
 //  Created by Dion Pettaway on 12/2/19.
 //  Copyright © 2019 Dipet_Low. All rights reserved.
@@ -9,6 +9,8 @@
 import UIKit
 
 class RestaurantTableViewController: UITableViewController {
+  
+  var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
   
   var restaurants:[Restaurant] = [
     Restaurant(name: "Honkai", type: "Chinese", location: "Hong Kong", image: "barrafina", isVisited: false, phone: "091-23924", description: "One of Hong Kong's golden wonders. Honkai is luxury chinese cuisine personified"),
@@ -46,6 +48,11 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       navigationController?.navigationBar.prefersLargeTitles = true
+      navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+      navigationController?.navigationBar.shadowImage = UIImage()
+      if let customFont = UIFont(name: "Raleway-Medium", size: 40.0) {
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: brandColor, NSAttributedString.Key.font: customFont]
+      }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
