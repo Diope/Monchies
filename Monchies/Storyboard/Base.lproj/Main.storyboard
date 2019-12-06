@@ -262,6 +262,68 @@
                                     <outlet property="descriptionLabel" destination="yGu-ev-Efh" id="J78-wb-LKJ"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailSeparatorCell" id="Q92-LN-V75" customClass="RestaurantDetailSeparatorCell" customModule="Monchies" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="463" width="414" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q92-LN-V75" id="kLA-MO-2FZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ys2-aK-tgf">
+                                            <rect key="frame" x="18" y="5.5" width="378" height="27.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subsection Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWt-7W-6U6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXh-VM-yAu" userLabel="Separator">
+                                                    <rect key="frame" x="0.0" y="26.5" width="378" height="1"/>
+                                                    <color key="backgroundColor" white="0.65823063380281688" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="O1w-jI-ceI"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Ys2-aK-tgf" secondAttribute="bottom" constant="12" id="Cgh-Rt-P2M"/>
+                                        <constraint firstItem="Ys2-aK-tgf" firstAttribute="leading" secondItem="kLA-MO-2FZ" secondAttribute="leading" constant="18" id="Kbm-Er-gDD"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ys2-aK-tgf" secondAttribute="trailing" constant="18" id="ca2-pW-PMd"/>
+                                        <constraint firstItem="Ys2-aK-tgf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kLA-MO-2FZ" secondAttribute="top" constant="5" id="zzM-jC-7Ah"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="SWt-7W-6U6" id="Ijm-lX-P7I"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" rowHeight="215" id="GOF-cP-6gO" customClass="RestaurantDetailMapCell" customModule="Monchies" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="508" width="414" height="215"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GOF-cP-6gO" id="G0M-1b-Ima">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRg-aN-bra">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="215" id="Bfe-Y3-RdV"/>
+                                            </constraints>
+                                        </mapView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="kRg-aN-bra" secondAttribute="bottom" id="LnC-ON-VnI"/>
+                                        <constraint firstItem="kRg-aN-bra" firstAttribute="leading" secondItem="G0M-1b-Ima" secondAttribute="leading" id="ci5-Bx-hlm"/>
+                                        <constraint firstAttribute="trailing" secondItem="kRg-aN-bra" secondAttribute="trailing" id="rkg-3W-kdm"/>
+                                        <constraint firstItem="kRg-aN-bra" firstAttribute="top" relation="greaterThanOrEqual" secondItem="G0M-1b-Ima" secondAttribute="top" id="tBX-WV-FYo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mapView" destination="kRg-aN-bra" id="Jks-RT-ldM"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="JRN-GF-Kzy"/>

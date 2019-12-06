@@ -40,6 +40,9 @@
 		E2A4BE052399700C00FC2790 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4BE042399700C00FC2790 /* Default-568h@2x.png */; };
 		E2A4BE08239A125A00FC2790 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE07239A125A00FC2790 /* UIColor.swift */; };
 		E2A4BE0A239A147000FC2790 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE09239A147000FC2790 /* UINavigationController.swift */; };
+		E2A4BE0D239A16A600FC2790 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A4BE0C239A16A600FC2790 /* MapKit.framework */; };
+		E2A4BE0F239A1D7F00FC2790 /* RestaurantDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE0E239A1D7F00FC2790 /* RestaurantDetailSeparatorCell.swift */; };
+		E2A4BE11239A1F7100FC2790 /* RestaurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE10239A1F7100FC2790 /* RestaurantDetailMapCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		E2A4BE042399700C00FC2790 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E2A4BE07239A125A00FC2790 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E2A4BE09239A147000FC2790 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		E2A4BE0C239A16A600FC2790 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E2A4BE0E239A1D7F00FC2790 /* RestaurantDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailSeparatorCell.swift; sourceTree = "<group>"; };
+		E2A4BE10239A1F7100FC2790 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A4BE0D239A16A600FC2790 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +104,7 @@
 				E2A4BE042399700C00FC2790 /* Default-568h@2x.png */,
 				E23D522223960806005F547C /* Monchies */,
 				E23D522123960806005F547C /* Products */,
+				E2A4BE0B239A16A600FC2790 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +148,8 @@
 				E2A4BDEC239868CF00FC2790 /* RestaurantDetailHeaderView.swift */,
 				E2A4BDEE2398CBA600FC2790 /* RestaurantDetailIconTextCell.swift */,
 				E2A4BE022398D3C400FC2790 /* RestaurantDetailTextCell.swift */,
+				E2A4BE0E239A1D7F00FC2790 /* RestaurantDetailSeparatorCell.swift */,
+				E2A4BE10239A1F7100FC2790 /* RestaurantDetailMapCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +220,14 @@
 				E2A4BE09239A147000FC2790 /* UINavigationController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2A4BE0B239A16A600FC2790 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2A4BE0C239A16A600FC2790 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +327,8 @@
 				E2A4BDC12397F8F400FC2790 /* Restaurant.swift in Sources */,
 				E2A4BDEF2398CBA600FC2790 /* RestaurantDetailIconTextCell.swift in Sources */,
 				E2A4BDED239868CF00FC2790 /* RestaurantDetailHeaderView.swift in Sources */,
+				E2A4BE0F239A1D7F00FC2790 /* RestaurantDetailSeparatorCell.swift in Sources */,
+				E2A4BE11239A1F7100FC2790 /* RestaurantDetailMapCell.swift in Sources */,
 				E2A4BDBF239748CF00FC2790 /* RestaurantDetailViewController.swift in Sources */,
 				E23D522623960806005F547C /* SceneDelegate.swift in Sources */,
 				E23D523823960969005F547C /* RestaurantTableViewController.swift in Sources */,
