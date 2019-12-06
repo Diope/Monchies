@@ -38,6 +38,8 @@
 		E2A4BE012398D30C00FC2790 /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A4BDD5239856D800FC2790 /* Raleway-ThinItalic.ttf */; };
 		E2A4BE032398D3C400FC2790 /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE022398D3C400FC2790 /* RestaurantDetailTextCell.swift */; };
 		E2A4BE052399700C00FC2790 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4BE042399700C00FC2790 /* Default-568h@2x.png */; };
+		E2A4BE08239A125A00FC2790 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE07239A125A00FC2790 /* UIColor.swift */; };
+		E2A4BE0A239A147000FC2790 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE09239A147000FC2790 /* UINavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		E2A4BDEE2398CBA600FC2790 /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		E2A4BE022398D3C400FC2790 /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
 		E2A4BE042399700C00FC2790 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E2A4BE07239A125A00FC2790 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E2A4BE09239A147000FC2790 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		E23D522223960806005F547C /* Monchies */ = {
 			isa = PBXGroup;
 			children = (
+				E2A4BE06239A122E00FC2790 /* Extensions */,
 				E2A4BDC62398569200FC2790 /* Resources */,
 				E2A4BDC52398054300FC2790 /* Delegate */,
 				E2A4BDC42398052B00FC2790 /* Storyboard */,
@@ -196,6 +201,15 @@
 				E2A4BDD5239856D800FC2790 /* Raleway-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E2A4BE06239A122E00FC2790 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2A4BE07239A125A00FC2790 /* UIColor.swift */,
+				E2A4BE09239A147000FC2790 /* UINavigationController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +304,7 @@
 			files = (
 				E23D523B239612EB005F547C /* RestaurantTableViewCell.swift in Sources */,
 				E2A4BE032398D3C400FC2790 /* RestaurantDetailTextCell.swift in Sources */,
+				E2A4BE0A239A147000FC2790 /* UINavigationController.swift in Sources */,
 				E23D522423960806005F547C /* AppDelegate.swift in Sources */,
 				E2A4BDC12397F8F400FC2790 /* Restaurant.swift in Sources */,
 				E2A4BDEF2398CBA600FC2790 /* RestaurantDetailIconTextCell.swift in Sources */,
@@ -297,6 +312,7 @@
 				E2A4BDBF239748CF00FC2790 /* RestaurantDetailViewController.swift in Sources */,
 				E23D522623960806005F547C /* SceneDelegate.swift in Sources */,
 				E23D523823960969005F547C /* RestaurantTableViewController.swift in Sources */,
+				E2A4BE08239A125A00FC2790 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

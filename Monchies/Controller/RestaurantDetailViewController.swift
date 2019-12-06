@@ -10,6 +10,7 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
+  var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
   var restaurant = Restaurant()
   
 //  @IBOutlet var restaurantImageView: UIImageView!
@@ -24,18 +25,39 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
       super.viewDidLoad()
 
     navigationItem.largeTitleDisplayMode = .never
-
-    tableView.separatorStyle = .none
-    tableView.delegate = self
-    tableView.dataSource = self
+    navigationController?.hidesBarsOnSwipe = false
+    
     
     headerView.nameLabel.text = restaurant.name
     headerView.typeLabel.text = restaurant.type
     headerView.headerImageView.image = UIImage(named: restaurant.image)
     headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
     
+    
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.separatorStyle = .none
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.tintColor = .white
+    
+    tableView.contentInsetAdjustmentBehavior = .never
+    
       // Do any additional setup after loading the view.
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      
+      navigationController?.hidesBarsOnSwipe = false
+      navigationController?.setNavigationBarHidden(false, animated: true)
+  }
+  
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+  
   
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1

@@ -46,20 +46,28 @@ class RestaurantTableViewController: UITableViewController {
 //  var restaurantVisited = Array(repeating: false, count: 19)
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
       navigationController?.navigationBar.prefersLargeTitles = true
       navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
       navigationController?.navigationBar.shadowImage = UIImage()
       if let customFont = UIFont(name: "Raleway-Medium", size: 40.0) {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: brandColor, NSAttributedString.Key.font: customFont]
       }
+      
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+      navigationController?.hidesBarsOnSwipe = true
     }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    navigationController?.hidesBarsOnSwipe = true
+  }
 
     // MARK: - Table view data source
 
