@@ -27,7 +27,7 @@ class RestaurantDetailHeaderView: UIView {
   @IBOutlet var heartImageView: UIImageView! {
     didSet {
       heartImageView.image = UIImage(named: "heart-tick")?.withRenderingMode(.alwaysTemplate)
-      heartImageView.tintColor = .white
+      heartImageView.tintColor = #colorLiteral(red: 0.9240588546, green: 0.5975355506, blue: 0.6359851956, alpha: 1)
     }
   }
 

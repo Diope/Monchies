@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -32,48 +33,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataCell" rowHeight="250" id="wG8-29-MEG" customClass="RestaurantTableViewCell" customModule="Monchies" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="250"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataCell" rowHeight="100" id="wG8-29-MEG" customClass="RestaurantTableViewCell" customModule="Monchies" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wG8-29-MEG" id="wae-Dj-JaY">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrafina" translatesAutoresizingMaskIntoConstraints="NO" id="uXW-6j-Agf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="uXW-6j-Agf" secondAttribute="height" multiplier="207:95" id="ben-4s-KOn"/>
+                                                <constraint firstAttribute="width" secondItem="uXW-6j-Agf" secondAttribute="height" multiplier="207:95" constant="189.56842105263158" id="ben-4s-KOn"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="5ov-ev-guf">
-                                            <rect key="frame" x="16" y="197" width="175" height="20"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IY0-ih-tBb" userLabel="Dim VIew">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="biG-Yc-95c">
+                                                    <rect key="frame" x="8" y="48" width="175" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="5ov-ev-guf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="B4x-do-kG9"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" white="1" alpha="0.36762764084507044" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1L-WT-VDZ">
+                                                            <rect key="frame" x="0.0" y="25" width="75" height="19"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="0dm-nk-AQz"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" white="1" alpha="0.34540052816901406" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="shadowOffset" width="0.0" height="1"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q7-sr-UBO">
+                                                    <rect key="frame" x="256" y="49.5" width="150" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="B4x-do-kG9"/>
+                                                <constraint firstItem="7Q7-sr-UBO" firstAttribute="width" secondItem="biG-Yc-95c" secondAttribute="width" multiplier="0.857143" id="3dE-1P-qU1"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Q7-sr-UBO" secondAttribute="trailing" constant="8" id="IfF-dz-w2Z"/>
+                                                <constraint firstAttribute="bottom" secondItem="biG-Yc-95c" secondAttribute="bottom" constant="8" id="N6p-bh-gvg"/>
+                                                <constraint firstItem="7Q7-sr-UBO" firstAttribute="centerY" secondItem="5ov-ev-guf" secondAttribute="centerY" id="cBI-7a-rww"/>
+                                                <constraint firstItem="biG-Yc-95c" firstAttribute="leading" secondItem="IY0-ih-tBb" secondAttribute="leading" constant="8" id="uQV-dL-VE7"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1L-WT-VDZ">
-                                            <rect key="frame" x="16" y="221" width="75" height="18"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="0dm-nk-AQz"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q7-sr-UBO">
-                                            <rect key="frame" x="248" y="198" width="150" height="18"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ghQ-Bh-9rS"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="5Gf-30-Zv0">
-                                            <rect key="frame" x="378" y="11" width="20" height="20"/>
+                                            <rect key="frame" x="386" y="11" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="5VX-UM-USx"/>
                                                 <constraint firstAttribute="height" constant="20" id="B3L-xl-TgU"/>
@@ -81,21 +101,16 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="z1L-WT-VDZ" firstAttribute="top" secondItem="5ov-ev-guf" secondAttribute="bottom" constant="4" id="0FA-I1-YBv"/>
-                                        <constraint firstItem="5Gf-30-Zv0" firstAttribute="trailing" secondItem="7Q7-sr-UBO" secondAttribute="trailing" id="1v2-Lf-eqz"/>
-                                        <constraint firstItem="z1L-WT-VDZ" firstAttribute="leading" secondItem="5ov-ev-guf" secondAttribute="leading" id="4jU-1T-27G"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="z1L-WT-VDZ" secondAttribute="trailing" constant="20" symbolic="YES" id="9Oj-D0-GMW"/>
-                                        <constraint firstItem="7Q7-sr-UBO" firstAttribute="top" secondItem="uXW-6j-Agf" secondAttribute="bottom" constant="8" id="A9w-FX-Hup"/>
-                                        <constraint firstItem="z1L-WT-VDZ" firstAttribute="leading" secondItem="5ov-ev-guf" secondAttribute="leading" id="Lt5-ur-MzA"/>
+                                        <constraint firstItem="IY0-ih-tBb" firstAttribute="leading" secondItem="wae-Dj-JaY" secondAttribute="leading" id="JAo-u7-3k7"/>
                                         <constraint firstItem="uXW-6j-Agf" firstAttribute="top" secondItem="wae-Dj-JaY" secondAttribute="top" id="MsB-dZ-Spt"/>
-                                        <constraint firstItem="5ov-ev-guf" firstAttribute="leading" secondItem="wae-Dj-JaY" secondAttribute="leading" constant="16" id="Nyt-pM-2hP"/>
-                                        <constraint firstItem="5ov-ev-guf" firstAttribute="top" secondItem="uXW-6j-Agf" secondAttribute="bottom" constant="7" id="SHX-Yi-QZ2"/>
+                                        <constraint firstAttribute="bottom" secondItem="uXW-6j-Agf" secondAttribute="bottom" id="S4E-Pd-Fbx"/>
                                         <constraint firstItem="5Gf-30-Zv0" firstAttribute="top" secondItem="wae-Dj-JaY" secondAttribute="topMargin" id="fQH-m8-Nuj"/>
-                                        <constraint firstAttribute="trailing" secondItem="7Q7-sr-UBO" secondAttribute="trailing" constant="16" id="gPm-fV-paQ"/>
-                                        <constraint firstItem="7Q7-sr-UBO" firstAttribute="leading" secondItem="5ov-ev-guf" secondAttribute="trailing" constant="57" id="jRj-XB-eIS"/>
+                                        <constraint firstAttribute="trailing" secondItem="IY0-ih-tBb" secondAttribute="trailing" id="fjP-EO-PP0"/>
+                                        <constraint firstItem="IY0-ih-tBb" firstAttribute="top" secondItem="wae-Dj-JaY" secondAttribute="top" id="krk-Ar-uyW"/>
+                                        <constraint firstAttribute="bottom" secondItem="IY0-ih-tBb" secondAttribute="bottom" id="mq3-hu-WYU"/>
                                         <constraint firstAttribute="trailing" secondItem="uXW-6j-Agf" secondAttribute="trailing" id="nI3-9w-4d1"/>
                                         <constraint firstItem="uXW-6j-Agf" firstAttribute="leading" secondItem="wae-Dj-JaY" secondAttribute="leading" id="ngA-6z-lAU"/>
-                                        <constraint firstAttribute="bottom" secondItem="uXW-6j-Agf" secondAttribute="bottom" constant="60" id="sJo-SZ-LgX"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Gf-30-Zv0" secondAttribute="trailing" constant="8" id="sbI-fU-ZKa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -299,17 +314,18 @@
                                     <outlet property="titleLabel" destination="SWt-7W-6U6" id="Ijm-lX-P7I"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" rowHeight="215" id="GOF-cP-6gO" customClass="RestaurantDetailMapCell" customModule="Monchies" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="508" width="414" height="215"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" id="GOF-cP-6gO" customClass="RestaurantDetailMapCell" customModule="Monchies" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="508" width="414" height="215.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GOF-cP-6gO" id="G0M-1b-Ima">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="215.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRg-aN-bra">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
+                                            <rect key="frame" x="0.0" y="0.5" width="414" height="215"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="215" id="Bfe-Y3-RdV"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="215" id="xfk-cl-BI1"/>
                                             </constraints>
                                         </mapView>
                                     </subviews>
@@ -322,6 +338,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="mapView" destination="kRg-aN-bra" id="Jks-RT-ldM"/>
+                                    <segue destination="KdP-ca-mhI" kind="show" identifier="showMap" id="dVg-Nb-cTo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -335,6 +352,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tm-Fj-a9V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1473.913043478261" y="-416.51785714285711"/>
+        </scene>
+        <!--Restaurant Map View Controller-->
+        <scene sceneID="Hpy-H7-9q8">
+            <objects>
+                <viewController id="KdP-ca-mhI" customClass="RestaurantMapViewController" customModule="Monchies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="edF-wY-gj0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Uda-GY-gKQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Kx0-dz-6dw" firstAttribute="bottom" secondItem="Uda-GY-gKQ" secondAttribute="bottom" constant="-34" id="6Cz-A6-cwR"/>
+                            <constraint firstItem="Kx0-dz-6dw" firstAttribute="trailing" secondItem="Uda-GY-gKQ" secondAttribute="trailing" id="OFk-We-ZBm"/>
+                            <constraint firstItem="Uda-GY-gKQ" firstAttribute="leading" secondItem="Kx0-dz-6dw" secondAttribute="leading" id="ltV-O8-Yiz"/>
+                            <constraint firstItem="Uda-GY-gKQ" firstAttribute="top" secondItem="Kx0-dz-6dw" secondAttribute="top" constant="-88" id="vkQ-uv-HmQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kx0-dz-6dw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JMN-93-cfk"/>
+                    <connections>
+                        <outlet property="mapView" destination="Uda-GY-gKQ" id="96v-of-Lyh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yf8-oI-uvg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2189.8550724637685" y="-416.51785714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="waG-UO-fUU">

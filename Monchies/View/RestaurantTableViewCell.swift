@@ -12,16 +12,20 @@ class RestaurantTableViewCell: UITableViewCell {
   
   @IBOutlet var nameLabel: UILabel! {
     didSet {
-      nameLabel.numberOfLines = 1
+      nameLabel.numberOfLines = 0
     }
   }
-  @IBOutlet var locationLabel: UILabel!
+  @IBOutlet var locationLabel: UILabel! {
+    didSet {
+      locationLabel.numberOfLines = 1
+    }
+  }
   @IBOutlet var typeLabel: UILabel!
   @IBOutlet var thumbnailImageView: UIImageView!
   @IBOutlet var heartImageView: UIImageView! {
     didSet {
       heartImageView.image = UIImage(named: "heart-tick")?.withRenderingMode(.alwaysTemplate)
-      heartImageView.tintColor = .white
+      heartImageView.tintColor = #colorLiteral(red: 0.9240588546, green: 0.5975355506, blue: 0.6359851956, alpha: 1)
     }
   }
 

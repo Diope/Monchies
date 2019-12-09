@@ -94,7 +94,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
       
     case 3:
       let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailSeparatorCell.self), for: indexPath) as! RestaurantDetailSeparatorCell
-      cell.titleLabel.text = "HOW TO GET HERE"
+      cell.titleLabel.text = "WHERE?"
       cell.selectionStyle = .none
       
       return cell
@@ -102,6 +102,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     case 4:
       let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailMapCell.self), for: indexPath) as! RestaurantDetailMapCell
       cell.selectionStyle = .none
+      cell.configure(location: restaurant.location)
       
       return cell
       
@@ -109,5 +110,22 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
       fatalError("Failed to instantiate the table view cell for detail view controller")
     }
   }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showMap" {
+      let destinationController = segue.destination as! RestaurantMapViewController
+      
+      destinationController.restaurant = restaurant
+    }
+  }
+  
+//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//    let cellHeight: CGFloat = CGFloat((indexPath.count) * 44)
+//    return self.tableView.bounds.size.height - cellHeight
+//  }
+  
+//  func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//    return 0
+//  }
 
 }

@@ -92,9 +92,17 @@ class RestaurantTableViewController: UITableViewController {
 
         // Configure the cell...
       cell.nameLabel.text = restaurants[indexPath.row].name
-      cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
+      cell.nameLabel.textColor = .white
+      
       cell.locationLabel.text = restaurants[indexPath.row].location
+      cell.locationLabel.textColor = .white
+      cell.locationLabel.shadowColor = .init(white: 1, alpha: 0.25)
+      
       cell.typeLabel.text = restaurants[indexPath.row].type
+      cell.typeLabel.textColor = .white
+      
+      
+      cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
       cell.heartImageView.isHidden = restaurants[indexPath.row].isVisited ? false : true
     
       return cell
