@@ -44,6 +44,7 @@
 		E2A4BE0F239A1D7F00FC2790 /* RestaurantDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE0E239A1D7F00FC2790 /* RestaurantDetailSeparatorCell.swift */; };
 		E2A4BE11239A1F7100FC2790 /* RestaurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE10239A1F7100FC2790 /* RestaurantDetailMapCell.swift */; };
 		E2A4BE13239E202A00FC2790 /* RestaurantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE12239E202900FC2790 /* RestaurantMapViewController.swift */; };
+		E2A4BE1523A0127700FC2790 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE1423A0127700FC2790 /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		E2A4BE0E239A1D7F00FC2790 /* RestaurantDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailSeparatorCell.swift; sourceTree = "<group>"; };
 		E2A4BE10239A1F7100FC2790 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
 		E2A4BE12239E202900FC2790 /* RestaurantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewController.swift; sourceTree = "<group>"; };
+		E2A4BE1423A0127700FC2790 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				E23D523723960969005F547C /* RestaurantTableViewController.swift */,
 				E2A4BDBE239748CF00FC2790 /* RestaurantDetailViewController.swift */,
 				E2A4BE12239E202900FC2790 /* RestaurantMapViewController.swift */,
+				E2A4BE1423A0127700FC2790 /* ReviewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			files = (
 				E23D523B239612EB005F547C /* RestaurantTableViewCell.swift in Sources */,
 				E2A4BE032398D3C400FC2790 /* RestaurantDetailTextCell.swift in Sources */,
+				E2A4BE1523A0127700FC2790 /* ReviewViewController.swift in Sources */,
 				E2A4BE0A239A147000FC2790 /* UINavigationController.swift in Sources */,
 				E23D522423960806005F547C /* AppDelegate.swift in Sources */,
 				E2A4BDC12397F8F400FC2790 /* Restaurant.swift in Sources */,

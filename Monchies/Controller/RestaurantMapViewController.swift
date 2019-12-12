@@ -9,14 +9,19 @@
 import UIKit
 import MapKit
 
-class RestaurantMapViewController: UIViewController {
+class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
   
   @IBOutlet weak var mapView: MKMapView!
+  
+  fileprivate let locationManager:CLLocationManager = CLLocationManager()
   var restaurant = Restaurant()
+  var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      mapView.delegate = self
       
       navigationController?.navigationBar.tintColor = .black
       
@@ -42,11 +47,31 @@ class RestaurantMapViewController: UIViewController {
             self.mapView.selectAnnotation(annotation, animated: true)
           }
         }
-        
       })
-
-        // Do any additional setup after loading the view.
+      
+//      locationManager.requestWhenInUseAuthorization()
+//      locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//      locationManager.distanceFilter = kCLDistanceFilterNone
+//      locationManager.startUpdatingLocation()
     }
+  
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    let identifier = "mapMarker"
+    
+    if annotation.isKind(of: MKUserLocation.self) {
+      return nil
+    }
+    
+    var annotationView: MKMarkerAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
+    
+    if annotationView == nil {
+      annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+    }
+    annotationView?.glyphText = "🍽"
+    annotationView?.markerTintColor = brandColor
+    
+    return annotationView
+  }
     
 
     /*
