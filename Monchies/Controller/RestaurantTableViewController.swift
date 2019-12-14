@@ -8,7 +8,19 @@
 
 import UIKit
 
-class RestaurantTableViewController: UITableViewController {
+class RestaurantTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+  
+  var addButton = UIButton(type: .custom)
+  
+  @IBOutlet weak var tableView: UITableView!
+  
+  @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+ @IBAction func buttonClick(_ sender: UIButton) {
+  performSegue(withIdentifier: "addRestaurant", sender: self)
+}
   
   var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
   
@@ -54,6 +66,12 @@ class RestaurantTableViewController: UITableViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: brandColor, NSAttributedString.Key.font: customFont]
       }
       
+      self.addButton.setTitleColor(UIColor.orange, for: .normal)
+      self.addButton.addTarget(self, action: #selector(buttonClick(_:)), for: UIControl.Event.touchUpInside)
+      self.view.addSubview(addButton)
+      
+//      tableView.delegate = self
+//      tableView.dataSource = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -63,6 +81,30 @@ class RestaurantTableViewController: UITableViewController {
       navigationController?.hidesBarsOnSwipe = true
     }
   
+  override func viewWillLayoutSubviews() {
+
+    addButton.layer.cornerRadius = addButton.layer.frame.size.width/2
+    addButton.backgroundColor = brandColor
+    addButton.clipsToBounds = true
+    addButton.setImage(UIImage(systemName: "plus")?.withRenderingMode(.alwaysTemplate), for: .normal)
+    addButton.tintColor = UIColor.white
+    addButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.45).cgColor
+    addButton.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+    addButton.layer.masksToBounds = false
+    addButton.layer.shadowOpacity = 1.0
+    addButton.layer.shadowRadius = 1.5
+    
+    
+      addButton.translatesAutoresizingMaskIntoConstraints = false
+      NSLayoutConstraint.activate(
+        [
+          addButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -36),
+          addButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40),
+          addButton.widthAnchor.constraint(equalToConstant: 56),
+          addButton.heightAnchor.constraint(equalToConstant: 56)]
+    )
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
@@ -71,12 +113,12 @@ class RestaurantTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
       return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
             
       
@@ -85,8 +127,9 @@ class RestaurantTableViewController: UITableViewController {
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+      
       let cellIdentifier = "dataCell"
       let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
 
@@ -108,49 +151,16 @@ class RestaurantTableViewController: UITableViewController {
       return cell
     }
   
-//  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    //Action Sheet
-//    let optionMenu = UIAlertController(title: nil, message: "What Do You Want To Do?", preferredStyle: .actionSheet)
-//
-//    if let popoverController = optionMenu.popoverPresentationController {
-//      if let cell = tableView.cellForRow(at: indexPath) {
-//        popoverController.sourceView = cell
-//        popoverController.sourceRect = cell.bounds
-//      }
-//    }
-//
-//
-//    // Actions
-//    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//    optionMenu.addAction(cancelAction)
-//
-//
-//    let callActionHandler = {(action: UIAlertAction!) -> Void in
-//      let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not yet implemented", preferredStyle: .alert)
-//      alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//      self.present(alertMessage, animated: true, completion: nil)
-//    }
-//
-//    let callAction = UIAlertAction(title: "Call " + "281-000-80\(indexPath.row)", style: .default, handler: callActionHandler)
-//    optionMenu.addAction(callAction)
-//
-//    let checkInTitle = self.restaurantVisited[indexPath.row] ? "Undo Check In" : "Check In"
-//    let checkInAction = UIAlertAction(title: checkInTitle, style: .default, handler: {
-//      (action: UIAlertAction!) -> Void in
-//          let cell = tableView.cellForRow(at: indexPath) as? RestaurantTableViewCell
-//          cell?.heartImageView.isHidden = self.restaurantVisited[indexPath.row]
-//          self.restaurantVisited[indexPath.row] = self.restaurantVisited[indexPath.row] ? false : true
-//        }
-//    )
-//    optionMenu.addAction(checkInAction)
-//
-//    // Display Menu
-//    present(optionMenu, animated: true, completion: nil)
-//    tableView.deselectRow(at: indexPath, animated: false)
+//  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    
+//    
+//    let indexPath = tableView.indexPathForSelectedRow!
+//    print(indexPath.row)
 //  }
   
   
-  override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+  
+  func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
     
     let checkInAction = UIContextualAction(style: .normal, title: "Check In") {
       (action, sourceView, completionHandler) in
@@ -170,12 +180,12 @@ class RestaurantTableViewController: UITableViewController {
   }
   
   // Deleting via swipe to the left (lead is swiping right, trailing is swiping left)
-  override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+  func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
     let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
       (action, sourceView, completionHandler) in
       self.restaurants.remove(at: indexPath.row)
     
-      self.tableView.deleteRows(at: [indexPath], with: .fade)
+      tableView.deleteRows(at: [indexPath], with: .fade)
       
       completionHandler(true)
       
@@ -206,10 +216,12 @@ class RestaurantTableViewController: UITableViewController {
   //MARK: - Segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showRestaurantDetail" {
-      if let indexPath = tableView.indexPathForSelectedRow {
+      if let indexPath = self.tableView.indexPathForSelectedRow {
         let destinationController = segue.destination as! RestaurantDetailViewController
         
         destinationController.restaurant = restaurants[indexPath.row]
+      } else if segue.identifier == "addRestaurant" {
+        let destinationController = segue.destination as! AddRestaurantController
       }
     }
   }
