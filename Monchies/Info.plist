@@ -35,6 +35,10 @@
 	<array>
 		<string>MKDirectionsModeCar</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow Monchie to access your camera in order to take photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow Monchie to access your photo library to add a photo to your new restaurant</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

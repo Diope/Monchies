@@ -56,8 +56,9 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
     }
   
   }
+  
 
-    override func viewDidLoad() {
+  override func viewDidLoad() {
         super.viewDidLoad()
 
       navigationController?.navigationBar.tintColor = .white
@@ -66,9 +67,7 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: brandColor, NSAttributedString.Key.font: customFont ]
       }
       
-    }
-
-    // MARK: - Table view data source
+  }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if let nextTextField = view.viewWithTag(textField.tag + 1) {
@@ -77,6 +76,52 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
     }
     return true
   }
+  
+//  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//      // #warning Incomplete implementation, return the number of rows
+//
+//
+//    return 6
+//
+//  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print(indexPath.row, indexPath.row == 0)
+    if indexPath.row == 0 {
+      let photoSourceRequestController = UIAlertController(title: "", message: "Choose your photo source", preferredStyle: .actionSheet)
+      
+      let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {(action) in
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+          let imagePicker = UIImagePickerController()
+          imagePicker.allowsEditing = false
+          imagePicker.sourceType = .camera
+          
+          self.present(imagePicker, animated: true, completion: nil)
+        }
+      })
+      
+      let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: {(action) in
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+          let imagePicker = UIImagePickerController()
+          imagePicker.allowsEditing = false
+          imagePicker.sourceType = .photoLibrary
+          
+          self.present(imagePicker, animated: true, completion: nil)
+        }
+      })
+      
+      let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+      
+      photoSourceRequestController.addAction(cameraAction)
+      photoSourceRequestController.addAction(photoLibraryAction)
+      photoSourceRequestController.addAction(cancelAction)
+      present(photoSourceRequestController, animated: true, completion: nil)
+    }
+  }
+
+    // MARK: - Table view data source
+  
+  
   
 //  func textViewDidBeginEditing(_ textView: UITextView) {
 //    if descriptionTextView.textColor == UIColor.lightGray {
