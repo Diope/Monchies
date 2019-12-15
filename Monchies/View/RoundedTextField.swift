@@ -29,7 +29,7 @@ class RoundedTextField: UITextField {
     
     self.layer.cornerRadius = 4.0
     self.layer.masksToBounds = true
-    self.layer.backgroundColor = UIColor.systemGray5.cgColor
+    self.layer.backgroundColor = UIColor.systemGray4.cgColor
   }
 
 }

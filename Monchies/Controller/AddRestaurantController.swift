@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
+
 
 class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
   var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
+  var restaurant: RestaurantMO!
   
   @IBOutlet weak var photoImageView: UIImageView!
   
@@ -52,11 +55,44 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
       dtv!.layer.cornerRadius = 4.0
       dtv!.layer.masksToBounds = true
       dtv!.textColor = UIColor.label
-      dtv!.layer.backgroundColor = UIColor.systemGray5.cgColor
+      dtv!.layer.backgroundColor = UIColor.systemGray4.cgColor
       dtv!.text = "How do you feel about this restaurant?"
 //      descriptionTextView.selectedTextRange = descriptionTextView.textRange(from: descriptionTextView.beginningOfDocument, to: dtv!.endOfDocument)
     }
   
+  }
+  
+  
+  
+  @IBAction func saveButton(sender: AnyObject) {
+    
+    if nameTextField.text == "" || typeTextField.text == "" || addressTextField.text == "" || descriptionTextView.text == "" || phoneTextField.text == "" {
+      let alertController = UIAlertController(title: "Oops", message: "One or more fields are blank, please note that all fields are required", preferredStyle: .alert)
+      let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+      
+      alertController.addAction(alertAction)
+      present(alertController, animated: true, completion: nil)
+      
+      return
+    }
+    // MARK: - Inserting Context Data
+    if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+      restaurant = RestaurantMO(context: appDelegate.persistentContainer.viewContext)
+      restaurant.name = nameTextField.text
+      restaurant.type = typeTextField.text
+      restaurant.location = addressTextField.text
+      restaurant.phone = phoneTextField.text
+      restaurant.summary = descriptionTextView.text
+      restaurant.isVisited = false
+      
+      if let restaurantImage = photoImageView.image {
+        restaurant.image = restaurantImage.pngData()
+      }
+      print("context writing has worked")
+      appDelegate.saveContext()
+    }
+    
+    dismiss(animated: true, completion: nil)
   }
   
 
@@ -163,11 +199,11 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
     
     if updatedText.isEmpty {
       descriptionTextView.text = "How do you feel about this restaurant?"
-      descriptionTextView.textColor = UIColor.lightGray
+      descriptionTextView.textColor = UIColor.placeholderText
       
       descriptionTextView.selectedTextRange = descriptionTextView.textRange(from: descriptionTextView.beginningOfDocument, to: descriptionTextView.beginningOfDocument)
-    } else if descriptionTextView.textColor == UIColor.systemGray2 && !text.isEmpty {
-      descriptionTextView.textColor = .black
+    } else if descriptionTextView.textColor == UIColor.placeholderText && !text.isEmpty {
+      descriptionTextView.textColor = .label
       descriptionTextView.text = text
     } else {
       return true

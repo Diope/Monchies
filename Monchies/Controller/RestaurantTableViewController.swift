@@ -9,36 +9,24 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RestaurantTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
   
-  var addButton = UIButton(type: .custom)
-  
-  @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var emptyRestaurantView: UIView!
-  
-  @IBAction func unwindToHome(segue: UIStoryboardSegue) {
-    dismiss(animated: true, completion: nil)
-  }
-  
- @IBAction func buttonClick(_ sender: UIButton) {
-  performSegue(withIdentifier: "addRestaurant", sender: self)
-}
+    
+    var addButton = UIButton(type: .custom)
+    var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
+    var restaurants: [RestaurantMO] = []
+    var fetchResultController: NSFetchedResultsController<RestaurantMO>!
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyRestaurantView: UIView!
+    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+      dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func buttonClick(_ sender: UIButton) {
+      performSegue(withIdentifier: "addRestaurant", sender: self)
+    }
  
-  var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
-  
-  var restaurants: [RestaurantMO] = []
-  
-//  var restaurantNames = [
-//    "Honkai", "Cafe Lore", "Petrus", "Hole In The Wall", "Toronto Ale House", "Uptown", "Triangle's Own", "Cafe Loreli", "Amy's on View", "Shino's", "Donostia", "Parafina", "Sato's", "Inakaya", "Apple Bee's", "Six Points", "Paelmo Caffe", "Hague", "Wolf, Ram, & Heart"
-//  ]
-//
-//  var restaurantImages = ["cafedeadend", "homei", "teakha", "cafeloisl", "petiteoyster", "forkeerestaurant", "posatelier", "bourkestreetbakery", "haighschocolate", "palominoespresso", "upstate", "traif", "grahamavenuemeats", "wafflewolf", "fiveleaves", "cafelore", "confessional", "barrafina", "donostia", "royaloak", "caskpubkitchen"]
-//
-//  var restaurantLocation = ["London", "Seoul", "Tokyo", "Osaka", "Frankfurt", "Hong Kong", "New York", "Washington DC", "Atlanta", "Seoul", "Kyoto", "Hong Kong", "London", "Paris", "Tokyo", "Paris", "Los Angeles", "Frankfurt", "Amsterdam", "London", "Sydney" ]
-//
-//  var restaurantTypes = ["Cafe", "American", "French", "Japanese", "Southern", "Bakery", "Bunch", "Thai", "Gourmet", "Americana", "Wine", "Coffee & Tea", "Breakfast", "Spanish", "Korean", "Chinese", "French", "Gourmet", "Cafe"]
-//
-//  var restaurantVisited = Array(repeating: false, count: 19)
 
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -57,6 +45,26 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
       
       tableView.backgroundView = emptyRestaurantView
       tableView.backgroundView?.isHidden = true
+      
+      // MARK: - NSFetching
+      let fetchRequest: NSFetchRequest<RestaurantMO> = RestaurantMO.fetchRequest()
+      let nameSort = NSSortDescriptor(key: "name", ascending: true)
+      fetchRequest.sortDescriptors = [nameSort]
+      
+      if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+        let context = appDelegate.persistentContainer.viewContext
+        fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController.delegate = self
+        
+        do {
+          try fetchResultController.performFetch()
+          if let fetchedObjects = fetchResultController.fetchedObjects {
+            restaurants = fetchedObjects
+          }
+        } catch  {
+          print(error)
+        }
+      }
     }
   
   override func viewWillLayoutSubviews() {
