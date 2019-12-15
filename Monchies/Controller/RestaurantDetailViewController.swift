@@ -31,6 +31,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         self.restaurant.rating = rating
         self.headerView.ratingImageView.image = UIImage(named: rating)
         
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+          appDelegate.saveContext()
+        }
+        
         let scaleTransform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         self.headerView.ratingImageView.transform = scaleTransform
         self.headerView.ratingImageView.alpha = 0
@@ -45,6 +49,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
   
   override func viewDidLoad() {
       super.viewDidLoad()
+    
+    if let rating = restaurant.rating {
+      headerView.ratingImageView.image = UIImage(named: rating)
+    }
 
     navigationItem.largeTitleDisplayMode = .never
     navigationController?.hidesBarsOnSwipe = false
