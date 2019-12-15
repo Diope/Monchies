@@ -14,7 +14,7 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
   @IBOutlet weak var mapView: MKMapView!
   
   fileprivate let locationManager:CLLocationManager = CLLocationManager()
-  var restaurant = Restaurant()
+  var restaurant: RestaurantMO!
   var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
 
 
@@ -26,7 +26,7 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
       navigationController?.navigationBar.tintColor = .black
       
       let geoCoder = CLGeocoder()
-      geoCoder.geocodeAddressString(restaurant.location, completionHandler:
+      geoCoder.geocodeAddressString(restaurant.location ?? "", completionHandler:
       {
         placemarks, error in
           if let error = error {

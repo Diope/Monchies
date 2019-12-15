@@ -47,6 +47,7 @@
 		E2A4BE2723A1D3B200FC2790 /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A4BDD5239856D800FC2790 /* Raleway-ThinItalic.ttf */; };
 		E2A4BE2B23A2027E00FC2790 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE2A23A2027E00FC2790 /* RoundedTextField.swift */; };
 		E2A4BE2D23A29EC200FC2790 /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BE2C23A29EC200FC2790 /* AddRestaurantController.swift */; };
+		E2C2FCD623A6044300660E35 /* Monchies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2C2FCD423A6044300660E35 /* Monchies.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		E2A4BE1423A0127700FC2790 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		E2A4BE2A23A2027E00FC2790 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		E2A4BE2C23A29EC200FC2790 /* AddRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
+		E2C2FCD523A6044300660E35 /* Monchies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Monchies.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				E23D522C2396080A005F547C /* Assets.xcassets */,
 				E23D52312396080A005F547C /* Info.plist */,
 				E23D523C239612F6005F547C /* View */,
+				E2C2FCD423A6044300660E35 /* Monchies.xcdatamodeld */,
 			);
 			path = Monchies;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				E23D523B239612EB005F547C /* RestaurantTableViewCell.swift in Sources */,
 				E2A4BE032398D3C400FC2790 /* RestaurantDetailTextCell.swift in Sources */,
 				E2A4BE1523A0127700FC2790 /* ReviewViewController.swift in Sources */,
+				E2C2FCD623A6044300660E35 /* Monchies.xcdatamodeld in Sources */,
 				E2A4BE2B23A2027E00FC2790 /* RoundedTextField.swift in Sources */,
 				E2A4BE0A239A147000FC2790 /* UINavigationController.swift in Sources */,
 				E23D522423960806005F547C /* AppDelegate.swift in Sources */,
@@ -548,6 +552,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2C2FCD423A6044300660E35 /* Monchies.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2C2FCD523A6044300660E35 /* Monchies.xcdatamodel */,
+			);
+			currentVersion = E2C2FCD523A6044300660E35 /* Monchies.xcdatamodel */;
+			path = Monchies.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E23D521823960806005F547C /* Project object */;
 }

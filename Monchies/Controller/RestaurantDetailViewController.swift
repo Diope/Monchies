@@ -11,7 +11,7 @@ import UIKit
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
-  var restaurant = Restaurant()
+  var restaurant: RestaurantMO!
   
 //  @IBOutlet var restaurantImageView: UIImageView!
 //  @IBOutlet var restaurantNameView: UILabel!
@@ -52,7 +52,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     headerView.nameLabel.text = restaurant.name
     headerView.typeLabel.text = restaurant.type
-    headerView.headerImageView.image = UIImage(named: restaurant.image)
+    if let restaurantImage = restaurant.image {
+      headerView.headerImageView.image = UIImage(data: restaurantImage as Data)
+    }
     headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
     
     
@@ -124,7 +126,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     case 4:
       let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailMapCell.self), for: indexPath) as! RestaurantDetailMapCell
       cell.selectionStyle = .none
-      cell.configure(location: restaurant.location)
+      if let restaurantLocation = restaurant.location {
+        cell.configure(location: restaurantLocation)
+      }
       
       return cell
       
@@ -135,9 +139,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showMap" {
-      let destinationController = segue.destination as! RestaurantMapViewController
       
+      let destinationController = segue.destination as! RestaurantMapViewController
       destinationController.restaurant = restaurant
+      
     } else if segue.identifier == "showReview" {
       let destinationController = segue.destination as! ReviewViewController
       
