@@ -8,9 +8,11 @@
 
 import UIKit
 
-class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
   var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
+  
+  @IBOutlet weak var photoImageView: UIImageView!
   
   @IBOutlet weak var nameTextField: RoundedTextField! {
     didSet {
@@ -76,14 +78,7 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
     }
     return true
   }
-  
-//  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//      // #warning Incomplete implementation, return the number of rows
-//
-//
-//    return 6
-//
-//  }
+
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     print(indexPath.row, indexPath.row == 0)
@@ -95,6 +90,7 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
           let imagePicker = UIImagePickerController()
           imagePicker.allowsEditing = false
           imagePicker.sourceType = .camera
+          imagePicker.delegate = self
           
           self.present(imagePicker, animated: true, completion: nil)
         }
@@ -105,6 +101,7 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
           let imagePicker = UIImagePickerController()
           imagePicker.allowsEditing = false
           imagePicker.sourceType = .photoLibrary
+          imagePicker.delegate = self
           
           self.present(imagePicker, animated: true, completion: nil)
         }
@@ -112,11 +109,34 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
       
       let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
       
+      
       photoSourceRequestController.addAction(cameraAction)
       photoSourceRequestController.addAction(photoLibraryAction)
       photoSourceRequestController.addAction(cancelAction)
       present(photoSourceRequestController, animated: true, completion: nil)
     }
+  }
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+      photoImageView.image = selectedImage
+      photoImageView.contentMode = .scaleAspectFill
+      photoImageView.clipsToBounds = true
+    }
+    
+    let leadingConstraint = NSLayoutConstraint(item: photoImageView as Any, attribute: .leading, relatedBy: .equal, toItem: photoImageView.superview, attribute: .leading, multiplier: 1, constant: 0)
+    leadingConstraint.isActive = true
+    
+    let trailingConstraint = NSLayoutConstraint(item: photoImageView as Any, attribute: .trailing, relatedBy: .equal, toItem: photoImageView.superview, attribute: .trailing, multiplier: 1, constant: 0)
+    trailingConstraint.isActive = true
+    
+    let topConstraint = NSLayoutConstraint(item: photoImageView as Any, attribute: .top, relatedBy: .equal, toItem: photoImageView.superview, attribute: .top, multiplier: 1, constant: 0)
+    topConstraint.isActive = true
+    
+    let bottomConstraint = NSLayoutConstraint(item: photoImageView as Any, attribute: .bottom, relatedBy: .equal, toItem: photoImageView.superview, attribute: .bottom, multiplier: 1, constant: 0)
+    bottomConstraint.isActive = true
+    
+    dismiss(animated: true, completion: nil)
   }
 
     // MARK: - Table view data source

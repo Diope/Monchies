@@ -520,8 +520,8 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="xOv-OJ-Jpo" firstAttribute="centerX" secondItem="3NA-Rc-YyQ" secondAttribute="centerX" id="Ed3-dQ-K6M"/>
-                                                <constraint firstItem="xOv-OJ-Jpo" firstAttribute="centerY" secondItem="3NA-Rc-YyQ" secondAttribute="centerY" id="fNZ-PP-Vsn"/>
+                                                <constraint firstItem="xOv-OJ-Jpo" firstAttribute="centerX" secondItem="3NA-Rc-YyQ" secondAttribute="centerX" id="3aH-Zl-b0S"/>
+                                                <constraint firstItem="xOv-OJ-Jpo" firstAttribute="centerY" secondItem="3NA-Rc-YyQ" secondAttribute="centerY" id="44r-hq-hSv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.80156983568075113" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -708,6 +708,7 @@
                         <outlet property="descriptionTextView" destination="vzR-qr-9pE" id="UWo-yI-BnU"/>
                         <outlet property="nameTextField" destination="gkq-62-vZU" id="6MZ-Ru-TJZ"/>
                         <outlet property="phoneTextField" destination="53O-SE-OUb" id="YuE-VJ-Opp"/>
+                        <outlet property="photoImageView" destination="xOv-OJ-Jpo" id="C1O-wr-04T"/>
                         <outlet property="typeTextField" destination="QCh-Bn-IFC" id="0PK-us-4K9"/>
                     </connections>
                 </tableViewController>
