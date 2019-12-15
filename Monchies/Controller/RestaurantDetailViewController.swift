@@ -68,6 +68,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     tableView.contentInsetAdjustmentBehavior = .never
     
       // Do any additional setup after loading the view.
+    
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +96,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     switch indexPath.row {
     case 0:
       let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailIconTextCell.self), for: indexPath) as! RestaurantDetailIconTextCell
-      cell.iconImageView.image = UIImage(systemName: "phone")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+      cell.iconImageView.image = UIImage(systemName: "phone")?.withTintColor(.label, renderingMode: .alwaysOriginal)
       cell.shortTextLabel.text = restaurant.phone
       cell.selectionStyle = .none
       
@@ -103,7 +104,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
       
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailIconTextCell.self), for: indexPath) as! RestaurantDetailIconTextCell
-      cell.iconImageView.image = UIImage(systemName: "map")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+      cell.iconImageView.image = UIImage(systemName: "map")?.withTintColor(.label, renderingMode: .alwaysOriginal)
       cell.shortTextLabel.text = restaurant.location
       cell.selectionStyle = .none
       
@@ -111,7 +112,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
       
     case 2:
       let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailTextCell.self), for: indexPath) as! RestaurantDetailTextCell
-      cell.descriptionLabel.text = restaurant.description
+      cell.descriptionLabel.text = restaurant.summary
       cell.selectionStyle = .none
       
       return cell

@@ -100,7 +100,7 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
       return 1
     }
 
@@ -124,7 +124,6 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
       let cellIdentifier = "dataCell"
       let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
 
-        // Configure the cell...
       cell.nameLabel.text = restaurants[indexPath.row].name
       cell.nameLabel.textColor = .white
       
@@ -143,15 +142,6 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
     
       return cell
     }
-  
-//  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    
-//    
-//    let indexPath = tableView.indexPathForSelectedRow!
-//    print(indexPath.row)
-//  }
-  
-  
   
   func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
     
@@ -176,9 +166,14 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
     let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
       (action, sourceView, completionHandler) in
-      self.restaurants.remove(at: indexPath.row)
-    
-      tableView.deleteRows(at: [indexPath], with: .fade)
+      // Delete from store
+      if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+        let context = appDelegate.persistentContainer.viewContext
+        let restaurantToDelete = self.fetchResultController.object(at: indexPath)
+        
+        context.delete(restaurantToDelete)
+        appDelegate.saveContext()
+      }
       
       completionHandler(true)
       
@@ -219,7 +214,38 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
     }
   }
     
-  //MARK: - Navigation
+  //MARK: - Fetched Results Methods
 
+  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.beginUpdates()
+  }
+  
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    
+    switch type {
+    case .insert:
+      if let newIndexPath = newIndexPath {
+        tableView.insertRows(at: [newIndexPath], with: .fade)
+      }
+    case .delete:
+      if let indexPath = indexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+    case .update:
+      if let indexPath = indexPath {
+        tableView.reloadRows(at: [indexPath], with: .fade)
+      }
+    default:
+      tableView.reloadData()
+    }
+    
+    if let fetchedObjects = controller.fetchedObjects {
+      restaurants = fetchedObjects as! [RestaurantMO]
+    }
+  }
+  
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.endUpdates()
+  }
 
 }
