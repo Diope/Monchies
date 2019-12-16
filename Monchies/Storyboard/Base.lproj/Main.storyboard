@@ -309,10 +309,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Ym6-Fx-le4">
-                                <rect key="frame" x="91" y="130.5" width="232" height="581"/>
+                                <rect key="frame" x="55" y="-90" width="304" height="1022"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pM2-qB-Yn9">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="164"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="50"/>
                                         <state key="normal" title="Love" image="love"/>
                                         <connections>
@@ -320,7 +320,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpd-Ss-GiV">
-                                        <rect key="frame" x="0.0" y="117" width="187" height="83"/>
+                                        <rect key="frame" x="0.0" y="199" width="261" height="166"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="50"/>
                                         <state key="normal" title="Cool" image="cool"/>
                                         <connections>
@@ -328,7 +328,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFb-al-XRr">
-                                        <rect key="frame" x="0.0" y="235" width="232" height="86"/>
+                                        <rect key="frame" x="0.0" y="400" width="304" height="172"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="50"/>
                                         <state key="normal" title="Happy" image="happy"/>
                                         <connections>
@@ -336,7 +336,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyS-tB-Gx1">
-                                        <rect key="frame" x="0.0" y="356" width="168" height="87"/>
+                                        <rect key="frame" x="0.0" y="607" width="245" height="174"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="50"/>
                                         <state key="normal" title="Sad" image="sad"/>
                                         <connections>
@@ -344,7 +344,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXE-Ow-EwJ">
-                                        <rect key="frame" x="0.0" y="478" width="181" height="103"/>
+                                        <rect key="frame" x="0.0" y="816" width="255" height="206"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="50"/>
                                         <state key="normal" title="Meh" image="meh"/>
                                         <connections>
@@ -673,7 +673,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="rdf-oS-d2K">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="rdf-oS-d2K">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -799,10 +799,10 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="l8O-J8-I1u">
-                            <rect key="frame" x="88.5" y="177.5" width="237" height="245.5"/>
+                            <rect key="frame" x="88.5" y="177.5" width="237" height="245"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyIMG" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWx-iR-D5i">
-                                    <rect key="frame" x="38.5" y="0.0" width="160.00000000000011" height="160"/>
+                                    <rect key="frame" x="38.5" y="0.0" width="160" height="160"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="CZj-k2-7ry"/>
                                         <constraint firstAttribute="width" secondItem="EWx-iR-D5i" secondAttribute="height" multiplier="1:1" id="JtX-1a-Xd6"/>
@@ -810,16 +810,16 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WwD-dg-yvG">
-                                    <rect key="frame" x="0.0" y="182" width="237" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="182" width="237" height="63"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a2-mo-ctJ">
-                                            <rect key="frame" x="23" y="0.0" width="191.5" height="35.5"/>
+                                            <rect key="frame" x="30" y="0.0" width="177.5" height="35"/>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap + to add some restaurants!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Rl-it-I90">
-                                            <rect key="frame" x="0.0" y="43.5" width="237" height="20"/>
+                                            <rect key="frame" x="0.0" y="43" width="237" height="20"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

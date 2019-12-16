@@ -31,8 +31,12 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
  
 
     override func viewDidLoad() {
-      
       super.viewDidLoad()
+      
+      if UserDefaults.standard.bool(forKey: "hasViewedOnboarding") {
+        return
+      }
+      
       navigationController?.navigationBar.prefersLargeTitles = true
       navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
       navigationController?.navigationBar.shadowImage = UIImage()
