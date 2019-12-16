@@ -14,6 +14,10 @@
 		E23D52302396080A005F547C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23D522E2396080A005F547C /* LaunchScreen.storyboard */; };
 		E23D523823960969005F547C /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D523723960969005F547C /* RestaurantTableViewController.swift */; };
 		E23D523B239612EB005F547C /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D523A239612EB005F547C /* RestaurantTableViewCell.swift */; };
+		E249666023A70504000B3EB0 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E249665F23A70504000B3EB0 /* Onboarding.storyboard */; };
+		E249666223A71F69000B3EB0 /* OnboardContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249666123A71F69000B3EB0 /* OnboardContentViewController.swift */; };
+		E249666423A72159000B3EB0 /* OnboardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249666323A72159000B3EB0 /* OnboardPageViewController.swift */; };
+		E249666623A72482000B3EB0 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249666523A72482000B3EB0 /* OnboardViewController.swift */; };
 		E2A4BDBF239748CF00FC2790 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BDBE239748CF00FC2790 /* RestaurantDetailViewController.swift */; };
 		E2A4BDC12397F8F400FC2790 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BDC02397F8F400FC2790 /* Restaurant.swift */; };
 		E2A4BDED239868CF00FC2790 /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4BDEC239868CF00FC2790 /* RestaurantDetailHeaderView.swift */; };
@@ -60,6 +64,10 @@
 		E23D52312396080A005F547C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E23D523723960969005F547C /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		E23D523A239612EB005F547C /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		E249665F23A70504000B3EB0 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		E249666123A71F69000B3EB0 /* OnboardContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardContentViewController.swift; sourceTree = "<group>"; };
+		E249666323A72159000B3EB0 /* OnboardPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardPageViewController.swift; sourceTree = "<group>"; };
+		E249666523A72482000B3EB0 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		E2A4BDBE239748CF00FC2790 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		E2A4BDC02397F8F400FC2790 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E2A4BDC8239856D600FC2790 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
@@ -151,6 +159,9 @@
 				E2A4BE12239E202900FC2790 /* RestaurantMapViewController.swift */,
 				E2A4BE1423A0127700FC2790 /* ReviewViewController.swift */,
 				E2A4BE2C23A29EC200FC2790 /* AddRestaurantController.swift */,
+				E249666123A71F69000B3EB0 /* OnboardContentViewController.swift */,
+				E249666323A72159000B3EB0 /* OnboardPageViewController.swift */,
+				E249666523A72482000B3EB0 /* OnboardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 			children = (
 				E23D522923960806005F547C /* Main.storyboard */,
 				E23D522E2396080A005F547C /* LaunchScreen.storyboard */,
+				E249665F23A70504000B3EB0 /* Onboarding.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -318,6 +330,7 @@
 				E2A4BE1723A1D3B200FC2790 /* Raleway-BlackItalic.ttf in Resources */,
 				E23D522D2396080A005F547C /* Assets.xcassets in Resources */,
 				E2A4BE1B23A1D3B200FC2790 /* Raleway-ExtraBoldItalic.ttf in Resources */,
+				E249666023A70504000B3EB0 /* Onboarding.storyboard in Resources */,
 				E2A4BE2723A1D3B200FC2790 /* Raleway-ThinItalic.ttf in Resources */,
 				E2A4BE1A23A1D3B200FC2790 /* Raleway-ExtraBold.ttf in Resources */,
 				E2A4BE2323A1D3B200FC2790 /* Raleway-Regular.ttf in Resources */,
@@ -343,6 +356,7 @@
 				E2A4BE0A239A147000FC2790 /* UINavigationController.swift in Sources */,
 				E23D522423960806005F547C /* AppDelegate.swift in Sources */,
 				E2A4BDC12397F8F400FC2790 /* Restaurant.swift in Sources */,
+				E249666623A72482000B3EB0 /* OnboardViewController.swift in Sources */,
 				E2A4BDEF2398CBA600FC2790 /* RestaurantDetailIconTextCell.swift in Sources */,
 				E2A4BE2D23A29EC200FC2790 /* AddRestaurantController.swift in Sources */,
 				E2A4BDED239868CF00FC2790 /* RestaurantDetailHeaderView.swift in Sources */,
@@ -353,6 +367,8 @@
 				E23D522623960806005F547C /* SceneDelegate.swift in Sources */,
 				E23D523823960969005F547C /* RestaurantTableViewController.swift in Sources */,
 				E2A4BE08239A125A00FC2790 /* UIColor.swift in Sources */,
+				E249666223A71F69000B3EB0 /* OnboardContentViewController.swift in Sources */,
+				E249666423A72159000B3EB0 /* OnboardPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
