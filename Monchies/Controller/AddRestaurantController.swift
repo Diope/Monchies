@@ -66,7 +66,8 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
   
   @IBAction func saveButton(sender: AnyObject) {
     
-    if nameTextField.text == "" || typeTextField.text == "" || addressTextField.text == "" || descriptionTextView.text == "" || phoneTextField.text == "" {
+    
+    if nameTextField.text == "" || typeTextField.text == "" || addressTextField.text == "" || descriptionTextView.text == "" {
       let alertController = UIAlertController(title: "Oops", message: "One or more fields are blank, please note that all fields are required", preferredStyle: .alert)
       let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
       
@@ -85,6 +86,7 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
       restaurant.summary = descriptionTextView.text
       restaurant.isVisited = false
       
+      
       if let restaurantImage = photoImageView.image {
         restaurant.image = restaurantImage.pngData()
       }
@@ -93,12 +95,16 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
     }
     
     dismiss(animated: true, completion: nil)
+    
+
   }
   
 
   override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+      photoImageView.image = UIImage(named: "placeholder_image")
+      photoImageView.isHidden = true
       navigationController?.navigationBar.tintColor = .white
       navigationController?.navigationBar.shadowImage = UIImage()
       if let customFont = UIFont(name: "Raleway-Medium", size: 35.0) {
@@ -117,7 +123,6 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
 
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print(indexPath.row, indexPath.row == 0)
     if indexPath.row == 0 {
       let photoSourceRequestController = UIAlertController(title: "", message: "Choose your photo source", preferredStyle: .actionSheet)
       
@@ -151,6 +156,7 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
       photoSourceRequestController.addAction(cancelAction)
       present(photoSourceRequestController, animated: true, completion: nil)
     }
+
   }
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -158,7 +164,8 @@ class AddRestaurantController: UITableViewController, UITextFieldDelegate, UITex
       photoImageView.image = selectedImage
       photoImageView.contentMode = .scaleAspectFill
       photoImageView.clipsToBounds = true
-    }
+      photoImageView.isHidden = false
+    } 
     
     let leadingConstraint = NSLayoutConstraint(item: photoImageView as Any, attribute: .leading, relatedBy: .equal, toItem: photoImageView.superview, attribute: .leading, multiplier: 1, constant: 0)
     leadingConstraint.isActive = true

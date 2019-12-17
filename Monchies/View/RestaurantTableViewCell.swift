@@ -20,8 +20,10 @@ class RestaurantTableViewCell: UITableViewCell {
       locationLabel.numberOfLines = 1
     }
   }
+  
   @IBOutlet var typeLabel: UILabel!
-  @IBOutlet var thumbnailImageView: UIImageView!
+  @IBOutlet var thumbnailImageView: UIImageView! 
+  
   @IBOutlet var heartImageView: UIImageView! {
     didSet {
       heartImageView.image = UIImage(named: "heart-tick")?.withRenderingMode(.alwaysTemplate)
