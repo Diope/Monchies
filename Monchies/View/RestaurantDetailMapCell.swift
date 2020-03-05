@@ -17,7 +17,7 @@ class RestaurantDetailMapCell: UITableViewCell {
   func configure(location: String) {
     let geoCoder = CLGeocoder()
     
-    print(location)
+    
     
     geoCoder.geocodeAddressString(location, completionHandler: {placemarks, error in
       if let error = error {

@@ -11,13 +11,15 @@ import CoreData
 
 class RestaurantTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
   
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var emptyRestaurantView: UIView!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var emptyRestaurantView: UIView!
     
     var addButton = UIButton(type: .custom)
     var brandColor = UIColor(red: 0.004207400605, green: 0.8167108297, blue: 0.8440560699, alpha: 1)
     var restaurants: [RestaurantMO] = []
     var fetchResultController: NSFetchedResultsController<RestaurantMO>!
+  
+  
   
     var searchController: UISearchController!
     var searchResults: [RestaurantMO] = []
@@ -26,7 +28,6 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
     }
     @IBAction func buttonClick(_ sender: UIButton) {
       performSegue(withIdentifier: "addRestaurant", sender: self)
-      print("testing")
     }
  
     override func viewDidLoad() {
@@ -43,8 +44,6 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
       tableView.backgroundView = emptyRestaurantView
       tableView.backgroundView?.isHidden = true
       
-      
-      self.addButton.setTitleColor(UIColor.orange, for: .normal)
       self.addButton.addTarget(self, action: #selector(buttonClick(_:)), for: UIControl.Event.touchUpInside)
       
       
@@ -72,11 +71,16 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
       searchController = UISearchController(searchResultsController: nil)
       searchController.searchResultsUpdater = self
       searchController.obscuresBackgroundDuringPresentation = false
+     
        
       searchController.searchBar.placeholder = "Search through your collection"
       searchController.searchBar.backgroundImage = UIImage()
       searchController.searchBar.tintColor = brandColor
-      searchController.searchBar.searchBarStyle = .minimal
+      searchController.searchBar.searchBarStyle = .default
+      
+      
+      searchController.searchBar.searchTextField.backgroundColor = .secondarySystemBackground
+      
       definesPresentationContext = true
       tableView.tableHeaderView = searchController.searchBar
     }
@@ -109,7 +113,7 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
     NSLayoutConstraint.activate(
       [
         addButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -36),
-        addButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100),
+        addButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -50),
         addButton.widthAnchor.constraint(equalToConstant: 56),
         addButton.heightAnchor.constraint(equalToConstant: 56)]
     )
@@ -143,7 +147,8 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
       return restaurants.count
     }
   }
-
+  
+ 
     
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
@@ -163,12 +168,10 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
     cell.typeLabel.text = restaurant.type
     cell.typeLabel.textColor = .white
     
-    cell.thumbnailImageView.image = UIImage(named: "placeholderIMG")
+//    cell.thumbnailImageView.image = UIImage(named: "placeholderIMG")
     
     if let restaurantImage = restaurant.image {
       cell.thumbnailImageView.image = UIImage(data: restaurantImage as Data)
-    } else {
-      cell.thumbnailImageView.image = UIImage(named: "placeholderIMG")
     }
   
     return cell

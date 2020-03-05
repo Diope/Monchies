@@ -101,10 +101,14 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    let phoneColor = UIColor(red: 0.6406285763, green: 0.9690826535, blue: 0.7506350875, alpha: 1)
+    let mapColor = UIColor(red: 0.6999751925, green: 0.8770487309, blue: 0.9857054353, alpha: 1)
+    
     switch indexPath.row {
     case 0:
       let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailIconTextCell.self), for: indexPath) as! RestaurantDetailIconTextCell
-      cell.iconImageView.image = UIImage(systemName: "phone")?.withTintColor(.label, renderingMode: .alwaysOriginal)
+      cell.iconImageView.image = UIImage(systemName: "phone.fill")?.withTintColor(phoneColor, renderingMode: .alwaysOriginal)
       cell.shortTextLabel.text = restaurant.phone
       cell.selectionStyle = .none
       
@@ -112,7 +116,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
       
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailIconTextCell.self), for: indexPath) as! RestaurantDetailIconTextCell
-      cell.iconImageView.image = UIImage(systemName: "map")?.withTintColor(.label, renderingMode: .alwaysOriginal)
+      cell.iconImageView.image = UIImage(systemName: "location.fill")?.withTintColor(mapColor, renderingMode: .alwaysOriginal)
       cell.shortTextLabel.text = restaurant.location
       cell.selectionStyle = .none
       
@@ -121,7 +125,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     case 2:
       let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailTextCell.self), for: indexPath) as! RestaurantDetailTextCell
       cell.descriptionLabel.text = restaurant.summary
-      cell.selectionStyle = .none
+      
       
       return cell
       
